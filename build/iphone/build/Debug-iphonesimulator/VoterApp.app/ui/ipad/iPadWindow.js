@@ -1,0 +1,1 @@
+/Users/prpatel/dev/getgoals/mobile/VoterApp/Resources/ui/ipad/iPadWindow.js
