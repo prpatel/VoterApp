@@ -1,4 +1,7 @@
+build/*
+build.log
 tmp
 *.class
 *.pyc
 *.pyo
+build.log

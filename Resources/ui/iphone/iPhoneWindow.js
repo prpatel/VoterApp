@@ -1,18 +1,22 @@
 exports.iPhoneWindow = function() {
-	var styles = require
+ 	createREPL();
+	require('ui/common/Styles');
+	var $$ = globals.ui.properties;
+	
+	
 	var ToolTipView = require('ui/common/ToolTipView'),
 		LoginView = require('ui/common/LoginView')
 		//TeamChooserTableView = require('ui/common/TeamChooserTableView'),
 		//ArticleWebView = require('ui/common/ArticleWebView');
-	
+	Ti.API.log('barColor:'+ $$.barColor);
 	var instance = Ti.UI.createWindow({
-		backgroundColor:'#ffffff'
+		
 	});
 	
 	var loginWindow = Ti.UI.createWindow({
 		title:'Login',
-		backgroundColor:'#ffffff',
-		barColor: styles.barColor
+		backgroundColor: G.ui.theme.backgroundColor,
+		barColor: $$.barColor
 	});
 	loginWindow.add(new LoginView());
 	var navGroup = Ti.UI.iPhone.createNavigationGroup({
@@ -22,13 +26,16 @@ exports.iPhoneWindow = function() {
 	
 	var voteWin = Ti.UI.createWindow({
 		title:'Vote',
-		barColor: styles.barColor
+		backgroundColor: G.ui.theme.backgroundColor,
+		barColor: $$.barColor,
+		//navBarHidden: true,
+		
 	});
 	//voteWin.add(new ArticleWebView());
 	
-	Ti.App.addEventListener('app:login:success', function() {
+	Ti.App.addEventListener('app:mainWin:open', function() {
 		navGroup.open(voteWin);
 	});
-	
+	Ti.App.fireEvent('app:show.drawer');
 	return instance;
 };

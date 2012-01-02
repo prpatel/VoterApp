@@ -1,1 +1,0 @@
-/Users/prpatel/dev/getgoals/mobile/VoterApp/Resources/ui/android/AndroidWindow.js

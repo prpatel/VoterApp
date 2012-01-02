@@ -40,3 +40,9 @@ exports.submitData = function (radioSelected) {
 	xhr.setRequestHeader("Content-Type","application/json; charset=utf-8");
 	xhr.send(JSON.stringify(jsonData));	
 }
+
+exports.authenticate = function (username, password) {
+	Ti.App.fireEvent('app:login:success', {username: username, verified: 1});
+	
+	// code here to authenticate to real server
+}

@@ -1,13 +1,11 @@
 exports.AndroidWindow = function() {
 	var ToolTipView = require('ui/common/ToolTipView'),
-		NewsTableView = require('ui/common/NewsTableView'),
-		ArticleWebView = require('ui/common/ArticleWebView'),
-		TeamChooserTableView = require('ui/common/TeamChooserTableView');
+		LoginView = require('ui/common/LoginView')
 	
 	var instance = Ti.UI.createWindow({
 		backgroundColor:'#fff',
 		navBarHidden:false,
-		title:'Team Feeder',
+		title:'Login',
 		exitOnClose: true,
 		activity: {
 			onCreateOptionsMenu : function(e) {
